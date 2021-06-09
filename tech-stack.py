@@ -9,7 +9,7 @@ from diagrams.programming.language import Python, Javascript
 from diagrams.generic.os import Ubuntu
 from diagrams.aws.compute import EC2
 from diagrams.programming.framework import Django, React
-
+from diagrams.onprem.vcs import Gitlab
 from diagrams.aws.database import ElastiCache, RDS
 from diagrams.aws.network import ELB
 from diagrams.aws.network import Route53
@@ -24,6 +24,7 @@ with Diagram("Technology Stack", show=False, graph_attr=graph_attr):
     react = React("React")
     js = Javascript("JavasScript")
     server = Ubuntu("Ubuntu Server")
+    gitlab = Gitlab("GitLab")
 
     with Cluster("Server Side"):
         ubuntu = [Gunicorn("Gunicorn"),
@@ -36,3 +37,5 @@ with Diagram("Technology Stack", show=False, graph_attr=graph_attr):
 
     client >> react >> js >> server >> ubuntu
     ubuntu - py - mssql
+    js - gitlab
+    py - gitlab
