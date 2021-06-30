@@ -3,7 +3,7 @@ from diagrams.onprem.compute import Server
 from diagrams.onprem.database import PostgreSQL
 from diagrams.onprem.network import Gunicorn
 from diagrams.onprem.client import Client
-from diagrams.onprem.database import MSSQL
+from diagrams.onprem.database import MSSQL, Postgresql
 from diagrams.onprem.network import Nginx
 from diagrams.programming.language import Python, Javascript
 from diagrams.generic.os import Ubuntu
@@ -33,9 +33,9 @@ with Diagram("Technology Stack", show=False, graph_attr=graph_attr):
                   EC2("Supervisor")]
 
     py = Python("Python")
-    mssql = MSSQL("Database")
+    sql = PostgreSQL("Database")
 
     client >> react >> js >> server >> ubuntu
-    ubuntu - py - mssql
+    ubuntu - py - sql
     js - gitlab
     py - gitlab
