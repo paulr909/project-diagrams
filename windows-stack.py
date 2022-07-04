@@ -16,7 +16,7 @@ graph_attr = {
 with Diagram("Windows Technology Stack", show=False, graph_attr=graph_attr):
     client = Client("Client Side")
     react = React("React")
-    js = Javascript("JavasScript")
+    js = Javascript("JavaScript")
     server = Windows("Windows Server")
     gitlab = Gitlab("GitLab")
 
