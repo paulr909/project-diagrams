@@ -22,7 +22,7 @@ graph_attr = {
 with Diagram("Technology Stack", show=False, graph_attr=graph_attr):
     client = Client("Client Side")
     react = React("React")
-    js = Javascript("JavasScript")
+    js = Javascript("JavaScript")
     server = Ubuntu("Ubuntu Server")
     gitlab = Gitlab("GitLab")
 
